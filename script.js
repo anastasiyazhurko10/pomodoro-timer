@@ -53,4 +53,20 @@ function resetTimer() {
         time = 300;
     }
     makeTimeLower();
+};
+
+function switchMode(mode) {
+    currentMode = mode;
+
+    if (mode === 'pomodoro') {
+        pomodoroBtn.classList.add('active');
+        breakBtn.classList.remove('active');
+    }
+
+    if (mode === 'break') {
+        breakBtn.classList.add('active');
+        pomodoroBtn.classList.remove('active');
+    }
+
+    resetTimer();
 }
