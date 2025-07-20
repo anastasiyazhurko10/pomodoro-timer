@@ -69,4 +69,13 @@ function switchMode(mode) {
     }
 
     resetTimer();
-}
+};
+
+startBtn.addEventListener('click', toggleTimer);
+resetBtn.addEventListener('click', resetTimer);
+pomodoroBtn.addEventListener('click', function() {
+    switchMode('pomodoro');
+});
+breakBtn.addEventListener('click', function(){
+    switchMode('break');
+});
