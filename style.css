@@ -61,7 +61,7 @@ body {
 .btn:hover,
 .btn.active,
 .btn-big {
-  background-color: #fff;
+  background-color: #ffe082;
   border-color: #fff;
   color: black;
 }
