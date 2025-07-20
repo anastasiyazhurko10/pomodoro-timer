@@ -22,3 +22,23 @@ function makeTimeLower() {
 
     display.textContent = minutes + ':' + formattedSeconds;
 }
+
+function toggleTimer() {
+    if (isRunning) {
+        clearInterval(timerId);
+        startBtn.textContent = 'start';
+        isRunning = false;
+    } else {
+        timerId = setInterval(() => {
+            if (time <= 0) {
+                clearInterval(timerId);
+                resetTimer();
+                return;
+            }
+            time--;
+            makeTimeLower();
+        }, 1000);
+        startBtn.textContent = 'stop';
+        isRunning = true;
+    }
+}
