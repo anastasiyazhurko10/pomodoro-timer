@@ -29,6 +29,10 @@ function toggleTimer() {
         startBtn.textContent = 'start';
         isRunning = false;
     } else {
+        if (timerId) {
+            clearInterval(timerId);
+            timerId = null;
+        }
         timerId = setInterval(() => {
             if (time <= 0) {
                 clearInterval(timerId);
@@ -37,7 +41,7 @@ function toggleTimer() {
             }
             time--;
             makeTimeLower();
-        }, 1000);
+        }, 100);
         startBtn.textContent = 'stop';
         isRunning = true;
     }
