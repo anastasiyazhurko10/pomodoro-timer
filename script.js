@@ -21,7 +21,7 @@ function makeTimeLower() {
     };
 
     display.textContent = minutes + ':' + formattedSeconds;
-}
+};
 
 function toggleTimer() {
     if (isRunning) {
@@ -41,4 +41,16 @@ function toggleTimer() {
         startBtn.textContent = 'stop';
         isRunning = true;
     }
+};
+
+function resetTimer() {
+    clearInterval(timerId);
+    isRunning = false;
+    startBtn.textContent = 'start';
+    if (currentMode === 'pomodoro') {
+        time = 1500;
+    } else {
+        time = 300;
+    }
+    makeTimeLower();
 }
